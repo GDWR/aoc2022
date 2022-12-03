@@ -1,9 +1,7 @@
 <div>
-    <img align="right" width="126" src=".github/wheel.png" alt="Wheel">
+    <img align="right" width="256" src=".github/wheel.png" alt="Wheel">
     <h1 align="center">Advent of Code 2022</h1>
 </div>
-
----
 
 Picking random language to use each day (removing as I go).
 As I get harder languages and further in I may go back to earlier days to free up an easier language.
@@ -12,33 +10,31 @@ As I get harder languages and further in I may go back to earlier days to free u
 
 <details>
     <summary style="font-size: x-large; font-weight: bolder">Language list</summary>
-    
-    ```
-        Python
-        Rust
-        GoLang
-        C#
-        Javascript
-        Typescript
-        Excel
-        Kotlin
-        Java
-        C
-        C++
-        Ruby
-        Perl
-        Assembly
-        Basic
-        Lua
-        Bash
-        Haskell
-        Erlang
-        Julia
-        Cobol
-        R
-        Scala
-        SQL
-        Visual Basic
-    ```
-
+    <ul>
+        <li> Assembly</li>
+        <li> Bash </li>
+        <li> Basic </li>
+        <li> C </li>
+        <li> C# </li>
+        <li> C++ </li>
+        <li> Cobol </li>
+        <li> Erlang </li>
+        <li> Excel </li>
+        <li> GoLang - Day 2</li>
+        <li> Haskell </li>
+        <li> Java </li>
+        <li> Javascript </li>
+        <li> Julia </li>
+        <li> Kotlin </li>
+        <li> Lua - Day 3</li>
+        <li> Perl </li>
+        <li> Python </li>
+        <li> R </li>
+        <li> Ruby </li>
+        <li> Rust - Day 1</li>
+        <li> SQL </li>
+        <li> Scala </li>
+        <li> Typescript </li>
+        <li> Visual Basic </li>
+    </ul>
 </details>
