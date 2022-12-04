@@ -20,21 +20,21 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> Cobol </li>
         <li> Erlang </li>
         <li> Excel </li>
-        <li> GoLang - Day 2</li>
+        <li> GoLang - Day 2 </li>
         <li> Haskell </li>
         <li> Java </li>
         <li> Javascript </li>
         <li> Julia </li>
         <li> Kotlin </li>
-        <li> Lua - Day 3</li>
+        <li> Lua - Day 3 </li>
         <li> Perl </li>
         <li> Python </li>
         <li> R </li>
         <li> Ruby </li>
-        <li> Rust - Day 1</li>
+        <li> Rust - Day 1 </li>
         <li> SQL </li>
         <li> Scala </li>
-        <li> Typescript </li>
+        <li> Typescript - Day 4 </li>
         <li> Visual Basic </li>
     </ul>
 </details>
