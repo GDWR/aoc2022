@@ -62,10 +62,16 @@ int main() {
     for (int i = 0; i < instructionCur; ++i) {
         Instruction instruction = instructions[i];
 
+        char toPush[instruction.amount];
+
         for (int j = 0; j < instruction.amount; ++j) {
-            char v = pop(&stacks[instruction.from]);
-            push(&stacks[instruction.to], v);
+            toPush[j] = pop(&stacks[instruction.from]);
         }
+
+        for (int x = instruction.amount - 1; x >= 0; --x) {
+            push(&stacks[instruction.to], toPush[x]);
+        }
+
     }
 
 
