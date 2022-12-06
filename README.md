@@ -12,7 +12,7 @@ As I get harder languages and further in I may go back to earlier days to free u
     <summary style="font-size: x-large; font-weight: bolder">Language list</summary>
     <ul>
         <li> Assembly</li>
-        <li> Bash </li>
+        <li> Bash - Day 6 </li>
         <li> Basic </li>
         <li> C - Day 5</li>
         <li> C# </li>

@@ -25,8 +25,8 @@ all_chars_unique() {
 
 input="./data"
 while IFS= read -r line; do
-  window=${line:0:4}
-  counter=4
+  window=${line:0:14}
+  counter=14
   while read -n 1 char; do
 
     all_chars_unique $window
@@ -35,7 +35,7 @@ while IFS= read -r line; do
       break
     fi
     ((counter++))
-    window="${window:1:3}${char}"
-  done <<<${line:4}
+    window="${window:1:13}${char}"
+  done <<<${line:14}
 
 done < "$input"
