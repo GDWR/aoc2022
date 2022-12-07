@@ -11,19 +11,19 @@ As I get harder languages and further in I may go back to earlier days to free u
 <details>
     <summary style="font-size: x-large; font-weight: bolder">Language list</summary>
     <ul>
-        <li> Assembly</li>
+        <li> Assembly </li>
         <li> Bash - Day 6 </li>
         <li> Basic </li>
-        <li> C - Day 5</li>
+        <li> C - Day 5 </li>
         <li> C# </li>
         <li> C++ </li>
         <li> Cobol - Day 2</li>
+        <li> Delphi </li>
         <li> Erlang </li>
         <li> Excel </li>
         <li> GoLang </li>
         <li> Haskell </li>
         <li> Java </li>
-        <li> Javascript </li>
         <li> Julia </li>
         <li> Kotlin </li>
         <li> Lua - Day 3 </li>
