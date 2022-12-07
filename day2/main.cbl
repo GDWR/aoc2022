@@ -21,7 +21,8 @@
         WORKING-STORAGE SECTION.
         01 END-OF-FILE  PIC Z(1).
         01 COUNTER      PIC 9(4) VALUE 0.
-        01 SCORE        PIC 9(10) VALUE 0.
+        01 SCORE1       PIC 9(10) VALUE 0.
+        01 SCORE2       PIC 9(10) VALUE 0.
 
         PROCEDURE DIVISION.
         BEGIN.
@@ -37,31 +38,40 @@
                             WHEN "A"
                                 EVALUATE MY-CHOICE
                                     WHEN "X"
-                                        COMPUTE SCORE = SCORE + 3 + 0
+                                        COMPUTE SCORE1 = SCORE1 + 1 + 3
+                                        COMPUTE SCORE2 = SCORE2 + 3 + 0
                                     WHEN "Y"
-                                        COMPUTE SCORE = SCORE + 1 + 3
+                                        COMPUTE SCORE1 = SCORE1 + 2 + 6
+                                        COMPUTE SCORE2 = SCORE2 + 1 + 3
                                     WHEN "Z"
-                                        COMPUTE SCORE = SCORE + 2 + 6
+                                        COMPUTE SCORE1 = SCORE1 + 3 + 0
+                                        COMPUTE SCORE2 = SCORE2 + 2 + 6
                                     WHEN OTHER
                                         DISPLAY "Invalid"
                             WHEN "B"
                                 EVALUATE MY-CHOICE
                                     WHEN "X"
-                                        COMPUTE SCORE = SCORE + 1 + 0
+                                        COMPUTE SCORE1 = SCORE1 + 1 + 0
+                                        COMPUTE SCORE2 = SCORE2 + 1 + 0
                                     WHEN "Y"
-                                        COMPUTE SCORE = SCORE + 2 + 3
+                                        COMPUTE SCORE1 = SCORE1 + 2 + 3
+                                        COMPUTE SCORE2 = SCORE2 + 2 + 3
                                     WHEN "Z"
-                                        COMPUTE SCORE = SCORE + 3 + 6
+                                        COMPUTE SCORE1 = SCORE1 + 3 + 6
+                                        COMPUTE SCORE2 = SCORE2 + 3 + 6
                                     WHEN OTHER
                                         DISPLAY "Invalid"
                             WHEN "C"
                                 EVALUATE MY-CHOICE
                                     WHEN "X"
-                                        COMPUTE SCORE = SCORE + 2 + 0
+                                        COMPUTE SCORE1 = SCORE1 + 1 + 6
+                                        COMPUTE SCORE2 = SCORE2 + 2 + 0
                                     WHEN "Y"
-                                        COMPUTE SCORE = SCORE + 3 + 3
+                                        COMPUTE SCORE1 = SCORE1 + 2 + 0
+                                        COMPUTE SCORE2 = SCORE2 + 3 + 3
                                     WHEN "Z"
-                                        COMPUTE SCORE = SCORE + 1 + 6
+                                        COMPUTE SCORE1 = SCORE1 + 3 + 3
+                                        COMPUTE SCORE2 = SCORE2 + 1 + 6
                                     WHEN OTHER
                                         DISPLAY "Invalid"
                             WHEN OTHER
@@ -69,8 +79,8 @@
                 END-READ
           END-PERFORM
 
-          DISPLAY "Score >>> " SCORE
-          DISPLAY "Lines >>> " COUNTER
+          DISPLAY "Part one >>> " SCORE1
+          DISPLAY "Part two >>> " SCORE2
 
           CLOSE DATA-FILE
        STOP RUN.
