@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-go run main.go
+echo "Part one:"
+cobc -xO part-one.cbl && ./part-one
+
+echo "Part two:"
+cobc -xO part-two.cbl && ./part-two

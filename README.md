@@ -17,10 +17,10 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> C - Day 5</li>
         <li> C# </li>
         <li> C++ </li>
-        <li> Cobol </li>
+        <li> Cobol - Day 2</li>
         <li> Erlang </li>
         <li> Excel </li>
-        <li> GoLang - Day 2 </li>
+        <li> GoLang </li>
         <li> Haskell </li>
         <li> Java </li>
         <li> Javascript </li>
