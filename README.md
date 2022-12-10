@@ -19,13 +19,13 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> C++ - Day 8 </li>
         <li> Cobol - Day 2</li>
         <li> Common Lisp </li>
-        <li> Delphi </li>
         <li> Erlang </li>
         <li> GoLang - Day 7 </li>
         <li> Haskell </li>
         <li> Julia </li>
         <li> Kotlin </li>
         <li> Lua - Day 3 </li>
+        <li> Pascal - Day 9 </li>
         <li> Perl </li>
         <li> Python </li>
         <li> Ruby </li>
