@@ -4,19 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 )
-
-type File struct {
-	name string
-	size int
-}
-
-type Directory struct {
-	name        string
-	files       []File
-	directories []Directory
-	parent      *Directory
-}
 
 func main() {
 	readFile, err := os.Open("data")
@@ -24,50 +14,47 @@ func main() {
 		panic(err)
 	}
 
-	fileSystem := Directory{
-		name:        "/",
-		files:       []File{},
-		directories: []Directory{},
-	}
-	currentWorkingDirectory := &fileSystem
-
+	fileSystem := newFilesystem()
 	fileScanner := bufio.NewScanner(readFile)
 	for fileScanner.Scan() {
-		fmt.Printf("cwd: %s\n", currentWorkingDirectory.name)
 		row := fileScanner.Text()
 
 		if row[0] == '$' {
-
-			if row[2:4] == "cd" {
-
-				if row[5] == '/' {
-					currentWorkingDirectory = &fileSystem
-					continue
-				} else if row[5:] == ".." {
-					currentWorkingDirectory = currentWorkingDirectory.parent
-				} else {
-					for _, directory := range fileSystem.directories {
-						if directory.name == row[5:] {
-							currentWorkingDirectory = &directory
-							break
-						}
-					}
-				}
-			}
+			fileSystem.handleCommand(row[2:])
 		} else {
-			if row[0:3] == "dir" {
-				newDir := Directory{
-					name:        "a",
-					files:       nil,
-					directories: nil,
-					parent:      currentWorkingDirectory,
+			split := strings.Split(row, " ")
+			sizeOrDir := split[0]
+			name := split[1]
+
+			if sizeOrDir == "dir" {
+				fileSystem.createRelativeDirectory(name)
+			} else {
+				size, err := strconv.Atoi(sizeOrDir)
+				if err != nil {
+					panic("Unable to parse int")
 				}
-				currentWorkingDirectory.directories = append(
-					currentWorkingDirectory.directories,
-					newDir,
-				)
+				fileSystem.createRelativeFile(name, size)
 			}
 		}
+	}
+
+	{
+		total := 0
+
+		for _, dir := range fileSystem.allDirectories() {
+			size := dir.getSize()
+			if size <= 100_000 {
+				total += size
+			}
+		}
+
+		fmt.Printf("\nPart one: %d\n", total)
+	}
+
+	{
+		spaceFree := 70_000_000 - fileSystem.root.getSize()
+		fmt.Printf("\n\nfree space = %d\n", spaceFree)
+
 	}
 
 }
