@@ -53,8 +53,23 @@ func main() {
 
 	{
 		spaceFree := 70_000_000 - fileSystem.root.getSize()
+		spaceRequired := 30000000 - spaceFree
 		fmt.Printf("\n\nfree space = %d\n", spaceFree)
+		fmt.Printf("space required = %d\n", spaceRequired)
 
+		smallestSize := 0
+		var smallestDir *Directory = nil
+
+		for _, dir := range fileSystem.allDirectories() {
+			size := dir.getSize()
+			if size >= spaceRequired && (smallestDir == nil || smallestSize > size) {
+				smallestSize = size
+				smallestDir = &dir
+			}
+		}
+
+		fmt.Printf("directory = %s\n", smallestDir.name)
+		fmt.Printf("size = %d\n", smallestSize)
 	}
 
 }
