@@ -40,5 +40,5 @@ parseLine s | s == "noop"          = NoOp
 main :: IO ()
 main = do
   contents <- getContents
-  print (evalInstrs (1, 0, 0) (parseLines contents))
+  print (evalInstrs (1, 1, 0) (parseLines contents))
  
