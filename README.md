@@ -21,7 +21,7 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> Common Lisp </li>
         <li> Erlang </li>
         <li> GoLang - Day 7 </li>
-        <li> Haskell </li>
+        <li> Haskell- Day 10 </li>
         <li> Julia </li>
         <li> Kotlin </li>
         <li> Lua - Day 3 </li>
