@@ -32,9 +32,9 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> Rust - Day 1 </li>
         <li> SQL </li>
         <li> Scala </li>
-        <li> Typescript - Day 4 </li>
+        <li> Typescript </li>
         <li> V </li>
         <li> Visual Basic </li>
-        <li> Zig </li>
+        <li> Zig - Day 4 </li>
     </ul>
 </details>
