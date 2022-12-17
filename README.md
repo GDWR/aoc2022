@@ -33,7 +33,7 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> SQL </li>
         <li> Scala - Day 12 (WIP) </li>
         <li> Typescript - Day 11 </li>
-        <li> V </li>
+        <li> V - Day 13 (WIP) </li>
         <li> Visual Basic </li>
         <li> Zig - Day 4 </li>
     </ul>
