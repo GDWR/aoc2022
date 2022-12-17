@@ -31,7 +31,7 @@ As I get harder languages and further in I may go back to earlier days to free u
         <li> Ruby </li>
         <li> Rust - Day 1 </li>
         <li> SQL </li>
-        <li> Scala </li>
+        <li> Scala - Day 12 (WIP) </li>
         <li> Typescript - Day 11 </li>
         <li> V </li>
         <li> Visual Basic </li>
