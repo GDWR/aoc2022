@@ -4,17 +4,23 @@ import strconv
 
 type Element = i64 | []Element
 
-fn (self Element) compare(other Element) bool {
+fn (self Element) compare(other Element) ?bool {
     println('- Compare $self vs $other')
 
     return match self {
         i64 {
             match other {
-                i64 {self <= other}
-                []Element { 
+                i64 { 
+                    if self == other {
+                        return none
+                    }
+
+                    self <= other
+                }
+                []Element {
                     mut new_self := []Element{}
                     new_self << self
-                    Element(new_self).compare(other)
+                    Element(new_self).compare(other)?
                 }
             }
         }
@@ -23,24 +29,26 @@ fn (self Element) compare(other Element) bool {
                 i64 {
                     mut new_other := []Element{}
                     new_other << other
-                    Element(self).compare(new_other)
+                    Element(self).compare(Element(new_other))?
                 }
                 []Element {
-                    if self.len < other.len {
-                        return false
-                    }
+                    println('  Comparing lists')
+                    mut order := false
 
-                    for i, e1 in self {
-                        
-                        if i > other.len - 1 {
-                            return false
+                    for i, self_e in self {
+
+                        if i >= other.len {
+                            println('  Right ran out of input')
+                            break
                         }
-                        if e1.compare(other[i]) == false {
-                            return false
-                        }
+
+                        other_e := other[i]
+
+                        order = self_e.compare(other_e)?
+                        break
                     }
-                    
-                    true
+                
+                    order 
                 }
             }
         }
@@ -103,34 +111,45 @@ fn (mut self PacketIterator) collect() []Element {
 fn main() {
     
     lines := os.read_lines('data')!
-    
     mut part_one := 0
     mut i := 0
+
     for (i <= lines.len) {
         println('== Pair ${(i/3) + 1} ==')
         mut p1 := PacketIterator{packet: lines[i]}
         mut p2 := PacketIterator{packet: lines[i+1]}
-        mut right_order := true 
+
         for {
-            v1 := p1.next() or {break}
-            v2 := p2.next() or {
-                right_order = false
-                break
-            }          
-            
-            result := v1.compare(v2)
-            if result == false {
-                right_order = false
+            left := p1.next() or {
+                println('  Left out of input')
+                part_one += (i/3) + 1
+                println('  Correct order')
                 break
             }
+
+            right := p2.next() or {
+                println('  Right out of input')
+                println('  Incorrect Order')
+                break
+            }
+          
+            result := left.compare(right) or {
+                println('  continuing')
+                continue
+            }
+
+            if result {
+                println('  Correct Order')
+                part_one += (i/3) + 1
+            } else {
+                println('  Incorrect Order')
+            }
+
+            break
         }
         
-        if right_order {
-            part_one += (i/3) + 1
-        }
-        println(' Ordered: $right_order\n')
         i += 3
     }
     
-    println('Partone: $part_one')
+    println('Part one: $part_one')
 }
